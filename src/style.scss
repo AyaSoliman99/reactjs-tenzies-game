@@ -1,0 +1,101 @@
+* {
+  font-family: "Inter", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body {
+  background: #0b2434;
+  // height: 100vh;
+#root{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    flex-direction:column;
+    margin-top: 20px;
+    .extras{
+      font-size: 18px;
+      margin-bottom: 20px;
+      width: 94%;
+    display: flex;
+    justify-content: space-between;
+    color: #FFFFFF;
+    text-transform: capitalize;
+      flex-wrap: wrap;
+    }
+    p{
+      margin: 10px 0;
+      padding: 0 20px;
+      font-size: 18px;
+      line-height: 1.7;
+    }
+}
+  main {
+    // width: 40%;
+    max-width: 500px;
+    height: 500px;
+    border-radius: 6px;
+    background: #f5f5f5;
+    @include flex-center;
+    flex-direction: column;
+    text-align: center;
+    .container {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 40px;
+      margin: 40px 0;
+      .die-container {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        box-shadow: 0px 2px 2px 0px #00000040;
+        border-radius: 6px;
+        text-align: center;
+        cursor: pointer;
+        user-select: none;
+        @include flex-center;
+      }
+    }
+    .roll-dice{
+        padding: 20px 30px;
+        font-size: 20px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        text-align: center;
+        background-color: #5035FF;
+        color:#FFFFFF;
+        box-shadow: 0px 4px 4px 0px #00000040;
+        &:active{
+            transform: scale(.98);
+            outline: none;
+        }
+    }
+  }
+}
+@media  (max-width:767px) {
+  #root{
+    main{
+      max-width: 90%;
+    }
+  }
+}
+@media  (max-width:400px) {
+  #root{
+    main{
+      max-width: 90%;
+      .container{
+        gap: 15px;
+      }
+      .die-container{
+        max-width: 30px;
+        max-height: 30px;
+      }
+    }
+  }
+}
